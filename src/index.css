@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-romantic: "Great Vibes", cursive;
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+
+  --color-soft-pink: #ffeef2;
+  --color-warm-pink: #ffb7c5;
+  --color-deep-rose: #d63384;
+  --color-romantic-purple: #9d7bb0;
+
+  --animate-heartbeat: heartbeat 1.5s ease-in-out infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-spin-slow: spin 8s linear infinite;
+
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+  }
+}
+
+body {
+  @apply bg-soft-pink text-gray-800 font-sans antialiased overflow-x-hidden;
+}
+
+.romantic-gradient {
+  background: radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 1) 0%, rgba(255, 238, 242, 1) 100%);
+}
+
+.glass-card {
+  @apply bg-white/80 backdrop-blur-sm border border-warm-pink/20 shadow-lg rounded-3xl;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-warm-pink/40 rounded-full hover:bg-warm-pink/60 transition-colors;
+}
